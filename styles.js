@@ -130,7 +130,7 @@ module.exports = "@charset \"UTF-8\";\n/*!\n *  Font Awesome 4.7.0 by @davegandy
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n.margin-top-200 {\n  margin-top: 200px; }\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\n.purple-gradient {\n  background: linear-gradient(40deg, #ff6ec4, #7873f5) !important; }\n.peach-gradient {\n  background: linear-gradient(40deg, #ffd86f, #fc6262) !important; }\n.btn-rounded {\n  border-radius: 10em; }\n.btn-floating {\n  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);\n  width: 47px;\n  height: 47px;\n  position: relative;\n  z-index: 1;\n  vertical-align: middle;\n  display: inline-block;\n  overflow: hidden;\n  transition: all .2s ease-in-out;\n  margin: 0;\n  border-radius: 50%;\n  padding: 0;\n  border: none;\n  cursor: pointer; }\n.btn-floating i {\n  display: inline-block;\n  width: 47px;\n  text-align: center;\n  color: #fff; }\n.btn-floating i {\n  font-size: 1.25rem;\n  line-height: 47px; }\n.fa {\n  display: inline-block;\n  font: normal normal normal 14px/1 FontAwesome;\n  font-size: inherit;\n  text-rendering: auto;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n"
 
 /***/ }),
 
