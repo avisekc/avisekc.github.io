@@ -599,7 +599,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".margin-top-30 {\n    margin-top: 30px;\n}\n\n.mat-list .mat-list-item.list-item {\n    height: 150px;\n    margin: 5px 5px;\n    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);\n}\n\n.mat-list .mat-list-item.list-item .mat-list-item-content {\n    align-items: flex-start;\n}\n\n.mat-list .mat-list-item.list-item img.mat-list-avatar {\n    width: 110px;\n    height: 110px;\n    border-radius: 0;\n}"
+module.exports = ".margin-top-10 {\n    margin-top: 10px;\n}\n\n.margin-top-30 {\n    margin-top: 30px;\n}\n\n.margin-bottom-20 {\n    margin-bottom: 20px;\n}\n\n.table-img-cell {\n    vertical-align: middle;\n    text-align: center;\n}\n\n.item-price {\n    background: #fff8dc;\n    padding: 2px 3px;\n    font-size: 20px;\n}\n\n.btn-group button {\n    padding: 0px 22px;\n    height: 38px;\n    border-radius: 20px 0 0 20px;\n    font-size: 18px;\n}\n\n.btn-group button.right-btn {\n    border-radius: 0 20px 20px 0;\n}\n\n.z-depth-05 {\n    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05), 0 2px 10px 0 rgba(0, 0, 0, 0.05);\n}\n\n.order-counter {\n    font-size: 16px;\n}"
 
 /***/ }),
 
@@ -610,7 +610,7 @@ module.exports = ".margin-top-30 {\n    margin-top: 30px;\n}\n\n.mat-list .mat-l
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-sub-header></app-sub-header>\n\n<div class=\"container-fluid\">\n    <h2 class=\"margin-top-30 text-center\">\n        Lokenath Juice Shop\n        <span class=\"coral-color\">></span> {{menuItem}}\n    </h2>\n\n    <!-- <mat-list>\n        <mat-list-item class=\"list-item\" *ngFor=\"let eachItem of menuItemList\">\n            <img matListAvatar [src]=\"eachItem.url\" alt=\"\">\n            <h3 matLine> {{eachItem.name}} </h3>\n            <p matLine>\n                <span> {{eachItem.caption}} </span>\n            </p>\n            <p matLine class=\"text-right\">\n                <span class=\"demo-2\">{{eachItem.currency}}. {{eachItem.price}} </span>\n            </p>\n        </mat-list-item>\n    </mat-list> -->\n</div>"
+module.exports = "<app-sub-header></app-sub-header>\n\n<div class=\"container-fluid\">\n    <h3 class=\"margin-top-30 margin-bottom-20 text-center\">\n        Lokenath Juice Shop\n        <span class=\"coral-color\">></span> {{menuItem}}\n    </h3>\n\n    <table class=\"table table-borderless table-sm margin-top-30 z-depth-05\" *ngFor=\"let eachItem of menuItemList\">\n        <tbody>\n            <tr>\n                <td rowspan=\"3\" class=\"table-img-cell\">\n                    <a class=\"media-left waves-light\">\n                        <img [src]=\"eachItem.url\" alt=\"{{eachItem.name}} image\" width=\"100\">\n                    </a>\n                </td>\n                <td>\n                    <h5 class=\"media-heading\">{{eachItem.name}}</h5>\n                </td>\n                <td>\n\n                </td>\n            </tr>\n            <tr>\n                <td>{{eachItem.caption}}</td>\n                <td>\n\n                </td>\n            </tr>\n            <tr>\n                <td>\n                    <span class=\"deep-orange-text item-price\">\n                        {{eachItem.currency}} {{eachItem.price}}\n                    </span> {{eachItem.pricePer}}\n                </td>\n                <td>\n                    <div class=\"light-blue-text text-center order-counter\">{{eachItem.orderCounter}}</div>\n                    <div class=\"btn-group\" role=\"group\">\n                        <button type=\"button\" class=\"btn btn-primary\" (click)=\"orderItemAdd(eachItem)\">+</button>\n                        <button type=\"button\" class=\"btn btn-primary right-btn\" (click)=\"orderItemSubtract(eachItem)\">-</button>\n                    </div>\n\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>"
 
 /***/ }),
 
@@ -644,25 +644,85 @@ var ItemSelectionComponent = /** @class */ (function () {
         this.menuItem = "";
         this.menuItemList = [
             {
-                "url": "https://www.indianhealthyrecipes.com/wp-content/uploads/2012/10/hyderabadi-chicken-biryani-recipe-1.jpg",
+                "url": "assets/images/hyderabadi-chicken-biryani-1.jpg",
                 "name": "Biriyani - chicken",
                 "caption": "Popular throughout the Indian subcontinent",
                 "price": "200",
-                "currency": "₹Rs"
+                "currency": "Rs.",
+                "pricePer": "per plate",
+                "orderCounter": 0
             },
             {
-                "url": "https://www.indianhealthyrecipes.com/wp-content/uploads/2012/10/hyderabadi-chicken-biryani-recipe-1.jpg",
+                "url": "assets/images/mutton-biryani-2.jpg",
                 "name": "Biriyani - mutton",
                 "caption": "Popular throughout the Indian subcontinent",
                 "price": "250",
-                "currency": "₹Rs"
+                "currency": "Rs.",
+                "pricePer": "per plate",
+                "orderCounter": 0
             },
             {
-                "url": "https://www.indianhealthyrecipes.com/wp-content/uploads/2012/10/hyderabadi-chicken-biryani-recipe-1.jpg",
+                "url": "assets/images/veg-thali-1.jpg",
                 "name": "Veg thali",
                 "caption": "Popular throughout the Indian subcontinent",
                 "price": "150",
-                "currency": "₹Rs"
+                "currency": "Rs.",
+                "pricePer": "per plate",
+                "orderCounter": 0
+            },
+            {
+                "url": "assets/images/hyderabadi-chicken-biryani-1.jpg",
+                "name": "Biriyani - chicken",
+                "caption": "Popular throughout the Indian subcontinent",
+                "price": "200",
+                "currency": "Rs.",
+                "pricePer": "per plate",
+                "orderCounter": 0
+            },
+            {
+                "url": "assets/images/mutton-biryani-2.jpg",
+                "name": "Biriyani - mutton",
+                "caption": "Popular throughout the Indian subcontinent",
+                "price": "250",
+                "currency": "Rs.",
+                "pricePer": "per plate",
+                "orderCounter": 0
+            },
+            {
+                "url": "assets/images/veg-thali-1.jpg",
+                "name": "Veg thali",
+                "caption": "Popular throughout the Indian subcontinent",
+                "price": "150",
+                "currency": "Rs.",
+                "pricePer": "per plate",
+                "orderCounter": 0
+            },
+            {
+                "url": "assets/images/hyderabadi-chicken-biryani-1.jpg",
+                "name": "Biriyani - chicken",
+                "caption": "Popular throughout the Indian subcontinent",
+                "price": "200",
+                "currency": "Rs.",
+                "pricePer": "per plate",
+                "orderCounter": 0
+            },
+            {
+                "url": "assets/images/mutton-biryani-2.jpg",
+                "name": "Biriyani - mutton",
+                "caption": "Popular throughout the Indian subcontinent",
+                "price": "250",
+                "currency": "Rs.",
+                "pricePer": "per plate",
+                "orderCounter": 0
+            },
+            {
+                "url": "assets/images/veg-thali-1.jpg",
+                "name": "Veg thali",
+                "caption": "Popular throughout the Indian subcontinent",
+                "price": "150",
+                "currency": "Rs.",
+                "pricePer": "per plate",
+                "orderCounter": 0
             }
         ];
         this.route.params.subscribe(function (params) {
@@ -671,6 +731,15 @@ var ItemSelectionComponent = /** @class */ (function () {
         });
     }
     ItemSelectionComponent.prototype.ngOnInit = function () {
+    };
+    ItemSelectionComponent.prototype.orderItemAdd = function (eachMenuItem) {
+        eachMenuItem.orderCounter++;
+        // console.log(eachItem.orderCounter);
+    };
+    ItemSelectionComponent.prototype.orderItemSubtract = function (eachMenuItem) {
+        if (eachMenuItem.orderCounter > 0) {
+            eachMenuItem.orderCounter--;
+        }
     };
     ItemSelectionComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
